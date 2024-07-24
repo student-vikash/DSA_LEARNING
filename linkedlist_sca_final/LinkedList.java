@@ -98,4 +98,7 @@ public class LinkedList {
         x=head.getData();
         head=head.getNext();
         return x;
-}}
+}
+
+
+}

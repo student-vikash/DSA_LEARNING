@@ -9,4 +9,11 @@ public class Selection1 {
         }
         System.out.println();
     }
+
+    // method for selection Sort to an array
+
+
+    public static void main(String[] args) {
+
+    }
 }
