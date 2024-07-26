@@ -246,6 +246,107 @@ public class StringTest
     }
 
 
+    // Method to count vowels and consonant of a String
+    public static void countVowelsConsonants2(String str)
+    {
+        int vowelCount=0,consonantCount=0;
+
+        // Defining vowels
+        String vowels="aeiouAEIOU";
+
+        for(char c:str.toCharArray())
+        {
+            if(Character.isLetter(c))
+            {
+                if(vowels.indexOf(c) != -1 )
+                {
+                    vowelCount++;
+                }
+                else
+                {
+                    consonantCount++;
+                }
+            }
+        }
+        System.out.println("Your String is "+str);
+        System.out.println("Total Numbers of Vowels is : "+vowelCount);
+        System.out.println("Total Numbers of Consonant is : "+consonantCount);
+    }
+
+
+    // method to count digit in given String
+    public static void countDigit(String str)
+    {
+
+
+        int digitCount=0;
+        int alphabet=0;
+
+        for(char c:str.toCharArray())
+        {
+            if(Character.isDigit(c))
+            {
+                digitCount++;
+            }
+            else {
+                alphabet++;
+            }
+        }
+        System.out.println("Your string is : "+str);
+        System.out.println("Total digit is : "+digitCount);
+        System.out.println("Total alphabet is : "+alphabet);
+    }
+
+
+
+    // method to count digit , alphabet and symbol in a given String
+    public static void countDigitLetterAndSymbol(String str)
+    {
+        int countDigit=0,countLetter=0,countSymbol=0;
+
+        for(char c:str.toCharArray())
+        {
+            if(Character.isDigit(c))
+            {
+                countDigit++;
+            }
+            else if(Character.isLetter(c))
+            {
+                countLetter++;
+            }
+            else {
+                countSymbol++;
+            }
+        }
+        System.out.println("Your String is : "+str);
+        System.out.println("Total digit is : "+countDigit);
+        System.out.println("Total letter is : "+countLetter);
+        System.out.println("Total symbol is : "+countSymbol);
+    }
+
+
+    // method to compress the String
+    public static void compressString(String str)
+    {
+        if(str==null || str.isEmpty())
+            return;
+        StringBuilder compress=new StringBuilder();
+        int count=1;
+
+        for(int i=1;i<str.length();i++)
+        {
+            if(str.charAt(i)==str.charAt(i-1))
+                count++;
+            else{
+                compress.append(str.charAt(i-1)).append(count);
+                count=1;
+            }
+        }
+        compress.append(str.charAt(str.length()-1)).append(count);
+
+        System.out.println("Actual String is : "+str);
+        System.out.println("Compressed String is : "+compress);
+    }
     public static void main(String[] args) {
       //  System.out.println("Reverse String is "+reverseString("Manisha"));
        // twoStringCom("RAMESH","R_M_S_");
@@ -258,6 +359,11 @@ public class StringTest
      //   System.out.println("Compressed String of aaaabbbccd is "+compressedStr("a"));
         //    System.out.println("Maximum length of substring si : "+lengthOfLongestSubstring("abcabccabc"));
 
-        System.out.println("Vowels and Consonant are : "+countVowelsAndConsonants("Viaksh"));
+      //  System.out.println("Vowels and Consonant are : "+countVowelsAndConsonants("Viaksh"));
+
+      //  countVowelsConsonants2("Vikash");
+      //  countDigit("Vikash23456vi");
+     //   countDigitLetterAndSymbol("Vikash2345vi@#$");
+        compressString("aaabbbbccccccdd");
     }
 }
