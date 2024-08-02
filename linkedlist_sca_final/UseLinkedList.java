@@ -2,7 +2,7 @@ package linkedlist_sca_final;
 
 public class UseLinkedList {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        LinkedList<Number> list = new LinkedList<Number>();
         list.append(10);
         list.append(20);
         list.append(30);

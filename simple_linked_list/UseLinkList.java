@@ -4,7 +4,7 @@ import linkedlist_sca_final.LinkedList;
 
 public class UseLinkList {
     public static void main(String[] args) {
-        LinkedList l=new LinkedList();
+        LinkedList<Number> l=new LinkedList<Number>();
         l.append(10);
         l.append(20);
         l.append(30);

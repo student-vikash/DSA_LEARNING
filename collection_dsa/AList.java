@@ -1,5 +1,6 @@
 package collection_dsa;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class AList {
@@ -92,22 +93,111 @@ public class AList {
     }
 
 
+    // method to sort the arrayList elements
+    public static void sortArrayList(ArrayList<Integer> list)
+    {
+        int n=list.size();
+        for(int i=0;i<n-1;i++)
+        {
+            boolean swapped = false;
+            for(int j=0;j<n-1-i;j++)
+            {
+                if(list.get(j) > list.get(j+1))
+                {
+                    int temp = list.get(j);
+                    list.set(j,list.get(j+1));
+                    list.set(j+1,temp);
+                    swapped=true;
+                }
+            }
+            if(!swapped)
+            break;
+        }
+        printArrayList(list);
+    }
+
+    // method to sort the arrayList elements in descending order
+    public static void sortDescendingOrder(ArrayList<Integer> list)
+    {
+
+        int n=list.size();
+        for(int i=0;i<n-1;i++)
+        {
+            boolean swapped=false;
+            for(int j=0;j<n-1-i;j++)
+            {
+                if(list.get(j)<list.get(j+1))
+                {
+                    int temp=list.get(j);
+                    list.set(j,list.get(j+1));
+                    list.set(j+1,temp);
+                    swapped=true;
+                }
+            }
+            if(!swapped)
+                break;
+        }
+        printArrayList(list);
+    }
+
+
+    // method to convert an array to ArrayList
+    public static ArrayList<String> convertedList(String[]ar)
+    {
+        ArrayList<String> list=new ArrayList<>();
+
+        for(String str:ar)
+        {
+            list.add(str);
+        }
+
+        printArrayListString(list);
+        return list;
+    }
+
+    // method to print an String arrayList
+    public static void printArrayListString(ArrayList<String> list)
+    {
+        for(int i=0;i<list.size();i++)
+        {
+            System.out.print(list.get(i)+" ");
+        }
+    }
+
+
+    // method to find the intersection of two ArrayList
+    public static ArrayList<Integer> findIntersection(ArrayList<Integer> list1,ArrayList<Integer> list2)
+    {
+        ArrayList<Integer> intersection =new ArrayList<>();
+        for(Integer element:list1)
+        {
+            if(list2.contains(element) && !intersection.contains(element))
+            {
+                intersection.add(element);
+            }
+        }
+        printArrayList(intersection);
+        return intersection;
+    }
+
+
+
+
     public static void main(String[] args) {
         ArrayList<Integer> list=new ArrayList<>();
-        list.add(5);
-        list.add(7);
         list.add(1);
+        list.add(2);
+        list.add(3);
         list.add(5);
         list.add(7);
 
         ArrayList<Integer> list2=new ArrayList<>();
-        list.add(2);
-        list.add(6);
-        list.add(1);
-        list.add(3);
-        list.add(9);
+        list2.add(3);
+        list2.add(4);
+        list2.add(5);
+        list2.add(2);
 
-      //  reverseArrayList(list);
+        //  reverseArrayList(list);
 
       /*
 
@@ -127,8 +217,25 @@ public class AList {
 
      */
 
+        /*
+
 
         ArrayList<Integer> merged = mergeWithDuplicate(list,list2);
         System.out.println("With duplicate value Merged ArrayList is "+merged);
+
+         */
+
+      //  sortArrayList(list);
+      //  sortDescendingOrder(list);
+
+        /*
+
+        String []ar={"Sumit","Sachin","Ramesh","Nitin","Vikash"};
+        convertedList(ar);
+
+         */
+
+        findIntersection(list,list2);
+
     }
 }

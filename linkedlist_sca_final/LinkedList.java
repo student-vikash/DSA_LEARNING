@@ -2,7 +2,7 @@ package linkedlist_sca_final;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList {
+public class LinkedList<I extends Number> {
 
     private Node head;
 
@@ -99,6 +99,7 @@ public class LinkedList {
         head=head.getNext();
         return x;
 }
+
 
 
 }

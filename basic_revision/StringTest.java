@@ -157,7 +157,7 @@ public class StringTest
 
         // Subtract the frequency based on the second string
         for(char c:s2.toCharArray()) {
-            charCount[c - 'a']--;
+            charCount[c-'a']--;
             // If count goes negative, s2 has more of 'c' than s1
             if (charCount[c - 'a'] < 0)
                 return false;    // not anagram
@@ -347,6 +347,10 @@ public class StringTest
         System.out.println("Actual String is : "+str);
         System.out.println("Compressed String is : "+compress);
     }
+
+
+
+
     public static void main(String[] args) {
       //  System.out.println("Reverse String is "+reverseString("Manisha"));
        // twoStringCom("RAMESH","R_M_S_");
